@@ -64,18 +64,11 @@
   },
   "wireplumber": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{icon} {volume}%{format_source}",
-    "format-bluetooth": "{icon} {volume}%{format_source}",
-    "format-bluetooth-muted": "🔇 {format_source}",
-    "format-muted": "🔇{format_source}",
-    "format-source": "",
-    "format-source-muted": " ",
-    "format-icons": {
-      "headphone": "🎧",
-      "headset": "🎧",
-      "default": ["🔈", "🔉", "🔊"]
-    },
-    "on-click": "pavucontrol"
+    "format": "🎧 {volume}%",
+    "format-muted": "🔇",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-click-middle": "helvum"
   },
   "tray": {
     "spacing": 8
