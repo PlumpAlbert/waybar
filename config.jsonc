@@ -5,14 +5,14 @@
   // "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
-  "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
+  "modules-left": ["hyprland/workspaces", "wlr/taskbar", "custom/music"],
   "modules-center": ["cpu", "memory"],
   "modules-right": [
     "custom/randwall",
     "hyprland/language",
     "custom/hyprpicker",
-    "tray",
     "wireplumber",
+    "tray",
     "clock"
   ],
   // Modules configuration
@@ -99,5 +99,15 @@
     "format": "󰏘",
     "on-click": "bash $HOME/.config/hypr/randwall.sh",
     "on-click-right": "bash $HOME/.config/hypr/wall.sh"
+  },
+
+  "custom/music": {
+    "format": "  {}",
+    "escape": true,
+    "interval": 2,
+    "tooltip": false,
+    "exec": "playerctl metadata --format='{{ title }}'",
+    "on-click": "playerctl play-pause",
+    "max-length": 50
   }
 }
